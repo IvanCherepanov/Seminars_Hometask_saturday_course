@@ -24,7 +24,7 @@ def get_documents_dict(n):
 def get_printers_dict(n):
     data_documents = dict()
     title = "page"
-    for i in range(1, n):
+    for i in range(n):
         page_massive = []
         for j in range(randint(10, 20)):
             record = dict()

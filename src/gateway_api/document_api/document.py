@@ -7,7 +7,7 @@ import os
 
 app = FastAPI()
 
-with open('../documents.json') as f:
+with open('./documents.json') as f:
     d = json.load(f)
 
 # class Item(BaseModel):
@@ -20,10 +20,11 @@ def read_root():
     return {"Hello": "World"}
 
 
-@app.get("/documents/")
+@app.get("/documents")
 def read_item(page: int = 0, amount: int = 10):
     new_key = "page"+str(page)
     print(new_key)
+    print(len(d))
     return d[new_key][:amount]
 
 if __name__ == "__main__":

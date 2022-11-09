@@ -1,0 +1,49 @@
+{
+  "$schema": "https://www.krakend.io/schema/v3.json",
+  "version": 3,
+  "name": "KrakenD_api",
+  "timeout": "3000ms",
+  "cache_ttl": "300s",
+  "output_encoding": "json",
+  "port": 8070,
+  "endpoints": [
+    {
+      "endpoint": "/client",
+      "method": "GET",
+      "output_encoding": "json",
+      "backend": [
+        {
+          "url_pattern": "/documents",
+          "encoding": "json",
+          "sd": "static",
+          "method": "GET",
+          "disable_host_sanitize": false,
+          "host": [
+            "doc_cont:8010"
+          ],
+          "is_collection": true,
+          "target": "",
+          "mapping": {
+            "collection": "documents"
+          }
+        },
+        {
+          "url_pattern": "/printers",
+          "encoding": "json",
+          "sd": "static",
+          "method": "GET",
+          "disable_host_sanitize": false,
+          "host": [
+            "print_cont:8011"
+          ],
+          "is_collection": true,
+          "target": "",
+          "mapping": {
+            "collection": "printers"
+          }
+        }
+      ],
+      "input_query_strings": []
+    }
+  ]
+}
