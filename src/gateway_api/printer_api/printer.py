@@ -7,7 +7,7 @@ import os
 
 app = FastAPI()
 
-with open('../printers.json') as f:
+with open('./printers.json') as f:
     d = json.load(f)
 
 # class Item(BaseModel):

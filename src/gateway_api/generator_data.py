@@ -48,5 +48,5 @@ if __name__ == '__main__':
     data_doc = get_documents_dict(10)
     data_printer = get_printers_dict(10)
     #print_dict_in_json_format(data)
-    write_documents_to_file("documents.json", data_doc)
-    write_documents_to_file("printers.json", data_printer)
+    write_documents_to_file("./document_api/documents.json", data_doc)
+    write_documents_to_file("./printer_api/printers.json", data_printer)
