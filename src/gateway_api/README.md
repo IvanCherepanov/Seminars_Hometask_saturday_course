@@ -13,4 +13,5 @@
 }
 }
 ```
-#### Результат тестирования с помощью postman: ![image](https://user-images.githubusercontent.com/43318957/200913449-830c0941-b8c6-4fd8-8f4d-f9f3e78806f3.png)
+#### Результат тестирования с помощью postman: 
+![image](https://user-images.githubusercontent.com/43318957/200913449-830c0941-b8c6-4fd8-8f4d-f9f3e78806f3.png)
