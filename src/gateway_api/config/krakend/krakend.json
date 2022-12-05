@@ -66,6 +66,40 @@
           ]
         }
       ]
+    },
+    {
+      "endpoint": "/main",
+      "method": "GET",
+      "output_encoding": "json",
+      "backend": [
+        {
+          "url_pattern": "/main",
+          "encoding": "json",
+          "sd": "static",
+          "method": "GET",
+          "host": [
+            "micro_1_cont:8012"
+          ],
+          "disable_host_sanitize": false,
+          "deny": [],
+          "allow": [
+            "foo"
+          ]
+        },
+        {
+          "url_pattern": "/main",
+          "encoding": "json",
+          "sd": "static",
+          "method": "GET",
+          "host": [
+            "micro_2_cont:8013"
+          ],
+          "disable_host_sanitize": false,
+          "allow": [
+            "second"
+          ]
+        }
+      ]
     }
   ],
   "extra_config": {

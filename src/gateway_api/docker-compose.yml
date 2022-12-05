@@ -14,6 +14,8 @@ services:
     depends_on:
       - doc-app
       - print-app
+      - micro-1-app
+      - micro-2-app
       - jaeger
   jaeger:
     image: jaegertracing/all-in-one:1
@@ -25,9 +27,27 @@ services:
     container_name: doc_cont
     ports:
       - "8010:8010"
-
   print-app:
     build: ./printer_api
     container_name: print_cont
     ports:
       - "8011:8011"
+  micro-1-app:
+    build: ./micro_1_api
+    container_name: micro_1_cont
+    ports:
+      - "8012:8012"
+  micro-2-app:
+    build: ./micro_2_api
+    container_name: micro_2_cont
+    ports:
+      - "8013:8013"
+  keycloak:
+    image: quay.io/keycloak/keycloak:latest
+    restart: always
+    ports:
+      - '8085:8080'
+    environment:
+      - KEYCLOAK_ADMIN=admin
+      - KEYCLOAK_ADMIN_PASSWORD=admin
+    command: start-dev
