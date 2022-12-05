@@ -45,6 +45,7 @@ services:
   keycloak:
     image: quay.io/keycloak/keycloak:latest
     restart: always
+    container_name: keyclock_cont
     ports:
       - '8085:8080'
     environment:

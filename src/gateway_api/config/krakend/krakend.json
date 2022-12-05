@@ -71,6 +71,16 @@
       "endpoint": "/main",
       "method": "GET",
       "output_encoding": "json",
+      "extra_config": {
+        "auth/validator": {
+          "alg": "RS256",
+          "jwk_url": "https://keyclock_cont:8080/realms/easyapi/protocol/openid-connect/certs",
+          "roles_key": "groups",
+          "roles": [
+            "admin"
+          ]
+        }
+      },
       "backend": [
         {
           "url_pattern": "/main",
