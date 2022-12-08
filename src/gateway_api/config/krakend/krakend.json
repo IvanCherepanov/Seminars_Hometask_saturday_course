@@ -74,8 +74,15 @@
       "extra_config": {
         "auth/validator": {
           "alg": "RS256",
-          "jwk_url": "http://keyclock_cont:8080/realms/easyapi/protocol/openid-connect/certs",
-          "disable_jwk_security": true
+          "disable_jwk_security": true,
+          "roles_key": "realm_access.roles",
+          "roles_key_is_nested": true,
+          "roles": [
+            "admin",
+            "user"
+          ],
+          "operation_debug": true,
+          "jwk_url": "http://keyclock_cont:8080/realms/easyapi/protocol/openid-connect/certs"
         }
       },
       "backend": [
@@ -112,6 +119,20 @@
       "endpoint": "/person",
       "method": "GET",
       "output_encoding": "json",
+      "extra_config": {
+        "auth/validator": {
+          "alg": "RS256",
+          "disable_jwk_security": true,
+          "roles_key": "realm_access.roles",
+          "roles_key_is_nested": true,
+          "roles": [
+            "hr",
+            "admin"
+          ],
+          "operation_debug": true,
+          "jwk_url": "http://keyclock_cont:8080/realms/easyapi/protocol/openid-connect/certs"
+        }
+      },
       "backend": [
         {
           "url_pattern": "/person",
