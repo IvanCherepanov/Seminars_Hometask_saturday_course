@@ -9,6 +9,8 @@ services:
       - ./config/krakend:/etc/krakend
     ports:
       - "8075:8070"
+      - "8080:8080"
+      - "8090:8090"
     command: [ "run", "-d", "-c", "/etc/krakend/krakend.json" ]
     container_name: kraken
     depends_on:

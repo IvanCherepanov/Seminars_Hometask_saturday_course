@@ -74,11 +74,8 @@
       "extra_config": {
         "auth/validator": {
           "alg": "RS256",
-          "jwk_url": "https://keyclock_cont:8080/realms/easyapi/protocol/openid-connect/certs",
-          "roles_key": "groups",
-          "roles": [
-            "admin"
-          ]
+          "jwk_url": "http://keyclock_cont:8080/realms/easyapi/protocol/openid-connect/certs",
+          "disable_jwk_security": true
         }
       },
       "backend": [
